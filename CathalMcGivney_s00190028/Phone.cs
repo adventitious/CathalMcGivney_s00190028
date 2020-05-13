@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CathalMcGivney_s00190028
 {
-    class Phone
+    public class Phone
     {
         public string Name{ get; set; }
         public decimal Price { get; set; }
