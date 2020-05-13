@@ -11,17 +11,13 @@ namespace CathalMcGivney_s00190028_Test
         public void TestIncreasePrice()
         {
             // Arrange
-            Phone phone = new Phone();
-
-
-            phone.Price = 100.0m;
-
+            Phone phone = new Phone("Samsung S20", 500.0m, "Android", "/images/Android", "/images/s20.jpg");
 
             // Act
             phone.IncreasePrice(12.5);
 
             // Assert
-            Assert.AreEqual(phone.Price, 112.5m);
+            Assert.AreEqual(phone.Price, 562.5m);
         }
     }
 }
