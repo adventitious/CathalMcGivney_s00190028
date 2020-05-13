@@ -20,6 +20,7 @@ namespace CathalMcGivney_s00190028
     /// </summary>
     public partial class MainWindow : Window
     {
+        PhoneData db = new PhoneData();
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +33,29 @@ namespace CathalMcGivney_s00190028
             p1.IncreasePrice(12.5);
 
             MessageBox.Show("Phone ! " + p1.Price);
+
+
+            var query = from p in db.Phones
+                        select p;
+
+
+            List<Phone> phones = new List<Phone>();
+
+            phones.Add(new Phone("Samsung S20", 500.0m, "Android", "/images/android.png", "/images/s20.jpg"));
+            phones.Add(new Phone("htc", 530.0m, "Android", "/images/android.png", "/images/s20.jpg"));
+
+            try
+            {
+                Lbx_Phones.ItemsSource = phones;
+            }
+            catch( Exception ee )
+            {
+                MessageBox.Show( ee.Message );
+            }
+            
+            // Lsb_data.SelectedItem = 0;
+
+
         }
     }
 }

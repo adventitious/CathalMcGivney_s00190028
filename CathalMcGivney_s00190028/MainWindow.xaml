@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:CathalMcGivney_s00190028"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+
+                <Image Source="" Width="75"/>
+                <TextBlock Text="{Binding Name}" Margin="5" FontSize="14"/>
+                
+            </StackPanel>
+
+
+        </DataTemplate>
+
+
+
+
+    </Window.Resources>
+
+
+
     <Grid>
-        
+        <ListBox x:Name="Lbx_Phones"  ItemTemplate="{StaticResource listboxTemplate}"  HorizontalAlignment="Left" Height="266" Margin="80,80,0,0" VerticalAlignment="Top" Width="228"/>
+        <TextBlock x:Name="Txb_price" HorizontalAlignment="Left" Margin="481,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Image x:Name="Img_Phone" HorizontalAlignment="Left" Height="180" Margin="481,101,0,0" VerticalAlignment="Top" Width="180"/>
+
     </Grid>
 </Window>
