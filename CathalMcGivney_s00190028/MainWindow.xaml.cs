@@ -24,5 +24,15 @@ namespace CathalMcGivney_s00190028
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello, world!");
+            Phone p1 = new Phone();
+            p1.Price = 100.0m;
+            p1.IncreasePrice(12.5);
+
+            MessageBox.Show("Phone ! " + p1.Price);
+        }
     }
 }
