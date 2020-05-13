@@ -37,16 +37,15 @@ namespace CathalMcGivney_s00190028
         private void Lbx_Phones_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Phone phone = (Phone)Lbx_Phones.SelectedItem;
-            // phone.IncreasePrice(33.33);
-            Txb_price.Text = string.Format("{0:C}", phone.Price );//  phone.Price.ToString();
+            Txb_price.Text = string.Format("{0:C}", phone.Price );
 
             try
             {
                 Img_Phone.Source = new BitmapImage(new Uri( phone.Phone_Image, UriKind.Relative ));
             }
-            catch (Exception ee)
+            catch (Exception exception)
             {
-                MessageBox.Show(ee.Message);
+                MessageBox.Show(exception.Message);
             }
         }
     }

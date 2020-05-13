@@ -32,7 +32,7 @@ namespace CathalMcGivney_s00190028
 
         public void IncreasePrice( double percent )
         {
-            Price = Price *  (decimal)(1.0 + ( 0.01 * percent) );
+            Price *= (decimal)(1.0 + ( 0.01 * percent) );
         }
     }
 
