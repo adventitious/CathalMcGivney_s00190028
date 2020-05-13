@@ -16,12 +16,11 @@ namespace CathalMcGivney_s00190028
         public string OS_Image{ get; set; }
         public string Phone_Image{ get; set; }
 
-
+        // Empty constructor required by XAML template
         public Phone()
         {
         }
 
-         
         public Phone( string name, decimal price, string operatingSystem, string OS_ImageArg, string phone_Image  )
         {
             Name = name;
@@ -44,5 +43,4 @@ namespace CathalMcGivney_s00190028
 
         public DbSet<Phone> Phones { get; set; }
     }
-
 }

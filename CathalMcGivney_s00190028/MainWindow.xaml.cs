@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 
 namespace CathalMcGivney_s00190028
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /*
+        Summer Exam May 2020
+    */
     public partial class MainWindow : Window
     {
         PhoneData db = new PhoneData();
@@ -37,15 +37,12 @@ namespace CathalMcGivney_s00190028
         private void Lbx_Phones_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Phone phone = (Phone)Lbx_Phones.SelectedItem;
-
-            Txb_price.Text = phone.Price.ToString();
+            // phone.IncreasePrice(33.33);
+            Txb_price.Text = string.Format("{0:C}", phone.Price );//  phone.Price.ToString();
 
             try
             {
-                Uri uri = new Uri("pack://application:,,," + phone.Phone_Image);
-
-                // MessageBox.Show("Phone ! " + uri);
-                Img_Phone.Source = new BitmapImage(uri);
+                Img_Phone.Source = new BitmapImage(new Uri( phone.Phone_Image, UriKind.Relative ));
             }
             catch (Exception ee)
             {
