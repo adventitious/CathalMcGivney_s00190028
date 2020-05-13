@@ -15,7 +15,13 @@ namespace CathalMcGivney_s00190028
         public string OperatingSystem{ get; set; }
         public string OS_Image{ get; set; }
         public string Phone_Image{ get; set; }
-        
+
+
+        public Phone()
+        {
+        }
+
+         
         public Phone( string name, decimal price, string operatingSystem, string OS_ImageArg, string phone_Image  )
         {
             Name = name;

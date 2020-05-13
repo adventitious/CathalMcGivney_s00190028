@@ -28,34 +28,30 @@ namespace CathalMcGivney_s00190028
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            /*
             MessageBox.Show("Hello, world!");
             Phone p1 = new Phone( "Samsung S20", 500.0m, "Android", "/images/Android", "/images/s20.jpg");
             p1.IncreasePrice(12.5);
 
             MessageBox.Show("Phone ! " + p1.Price);
-
+            */
 
             var query = from p in db.Phones
                         select p;
 
+            Lbx_Phones.ItemsSource = query.ToList();
+        }
 
-            List<Phone> phones = new List<Phone>();
+        private void Lbx_Phones_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Phone phone = (Phone)Lbx_Phones.SelectedItem;
 
-            phones.Add(new Phone("Samsung S20", 500.0m, "Android", "/images/android.png", "/images/s20.jpg"));
-            phones.Add(new Phone("htc", 530.0m, "Android", "/images/android.png", "/images/s20.jpg"));
+            Txb_price.Text = phone.Price.ToString();
 
-            try
-            {
-                Lbx_Phones.ItemsSource = phones;
-            }
-            catch( Exception ee )
-            {
-                MessageBox.Show( ee.Message );
-            }
-            
-            // Lsb_data.SelectedItem = 0;
+            Uri uri = new Uri( "pack://application:,,," + phone.Phone_Image);
 
-
+            MessageBox.Show("Phone ! " + uri );
+            Img_Phone.Source = new BitmapImage( uri );
         }
     }
 }
